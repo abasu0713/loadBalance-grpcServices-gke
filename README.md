@@ -1,2 +1,3 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+# A Simple grpc example using Dart
+
+This is a simple gRPC example that is deployed on GKE
