@@ -10,6 +10,7 @@ RUN dart pub get
 COPY . .
 # Ensure packages are still up-to-date if anything has changed
 RUN dart pub get --offline
+RUN mkdir -p bin
 RUN dart compile exe lib/server.dart -o bin/server
 
 # Build minimal serving image from AOT-compiled `/server` and required system
