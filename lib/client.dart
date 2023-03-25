@@ -3,8 +3,8 @@ import 'package:grpc_test_ground/src/generated/sample-grpc.pbgrpc.dart';
 
 Future<void> main(List<String> args) async {
   final channel = ClientChannel(
-    'localhost',
-    port: 8080,
+    '34.30.76.93',
+    port: 80,
     options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
   );
   final stub = EchoClient(channel);
