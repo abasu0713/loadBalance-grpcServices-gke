@@ -4,3 +4,4 @@
 .idea/
 cert.pem
 privkey.pem
+*DS_Store
