@@ -24,6 +24,7 @@ Below diagrams depict an architectural overview of what we are trying to achieve
 Figure: Architectural overview of Cloud Deployment (Server side API)
 
 ![Architectural In-Depth Review](assets/gRPC-Architectural-In-Depth.png)
+Figure: In-depth review of architecture that is deployed on GKE
 
 ## References
 [1] [Google's official comparison](https://cloud.google.com/blog/products/api-management/understanding-grpc-openapi-and-rest-and-when-to-use-them)
