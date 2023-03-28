@@ -21,7 +21,7 @@ Future<void> main(List<String> args) async {
   print("Arg: $arg");
 
   try {
-    final channel = grpc_web.GrpcOrGrpcWebClientChannel.grpc(
+    /*final channel = grpc_web.GrpcOrGrpcWebClientChannel.grpc(
       '34.72.122.195',
       port: 443,
       options: ChannelOptions(
@@ -31,6 +31,12 @@ Future<void> main(List<String> args) async {
           onBadCertificate: (cert, host) => true,
         ),
       ),
+    );*/
+    final channel = ClientChannel(
+      'localhost',
+      port: 8080,
+      options: const ChannelOptions(
+        credentials: ChannelCredentials.insecure())
     );
     print("Channel created!");
     final stub = EchoClient(channel);
