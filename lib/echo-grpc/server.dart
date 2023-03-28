@@ -1,15 +1,15 @@
 
 import 'package:grpc/grpc.dart';
 import 'package:gcp/gcp.dart' as gcp;
-import 'package:grpc_test_ground/service.dart';
+import 'package:grpc_test_ground/echo-grpc/service.dart';
 
 
-void main(List<String> arguments){
+void main(){
   print("Starting gRCP Server");
-  runGrpcTranslatorOnServer(arguments);
+  _runGrpcServer();
 }
 
-Future<void> runGrpcTranslatorOnServer(List<String> args) async {
+Future<void> _runGrpcServer() async {
   final server = Server([EchoService()]);
   final listenPort = gcp.listenPort();
   await server.serve(port: listenPort);

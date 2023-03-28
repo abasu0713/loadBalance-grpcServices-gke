@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "GRPCBasicEcho";
+
+package arkobasu.space.grpc;
+
+service Echo {
+  rpc Echo (EchoRequest) returns (Response) {}
+
+  rpc ReverseEcho (EchoRequest) returns (Response) {}
+}
+
+message EchoRequest {
+  string content = 1;
+}
+
+message Response {
+  string content = 1;
+}
+

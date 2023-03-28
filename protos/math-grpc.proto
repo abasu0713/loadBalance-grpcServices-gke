@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "GRPCBasicMath";
+
+package arkobasu.space.grpc;
+
+service Math {
+  rpc FibonacciSeries (IntegerNumber) returns (stream IntegerNumber) {}
+
+  rpc IsPrime (IntegerNumber) returns (BoolResponse) {}
+}
+
+message IntegerNumber {
+  int32 value = 1;
+}
+
+message BoolResponse {
+  bool value = 1;
+}

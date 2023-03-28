@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: echo-grpc
+  name: math-grpc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: echo-grpc
+      app: math-grpc
   template:
     metadata:
       labels:
-        app: echo-grpc
+        app: math-grpc
     spec:
       containers:
-        - name: echo-grpc
-          image: us-central1-docker.pkg.dev/katha-dbc46/docker-image-repository-test/echo-grpc:latest
+        - name: math-grpc
+          image: us-central1-docker.pkg.dev/katha-dbc46/docker-image-repository-test/math-grpc:latest
           ports:
-            - containerPort: 8081
+            - containerPort: 8082
           env:
             - name: PORT
-              value: "8081"
+              value: "8082"
           resources:
             requests:
               cpu: 50m
