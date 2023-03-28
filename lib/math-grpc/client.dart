@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:math';
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_or_grpcweb.dart' as grpc_web;
-import 'package:grpc_test_ground/src/generated/echo-grpc.pbgrpc.dart';
 import 'package:grpc_test_ground/src/generated/math-grpc.pbgrpc.dart';
 
 class MyHttpOverrides extends HttpOverrides {
