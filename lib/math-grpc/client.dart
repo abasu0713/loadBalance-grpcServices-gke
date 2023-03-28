@@ -21,8 +21,8 @@ Future<void> main(List<String> args) async {
   final randomNumber = Random().nextInt(20);
   print("Generated random number: $randomNumber");
   try {
-    /*final channel = grpc_web.GrpcOrGrpcWebClientChannel.grpc(
-      '34.72.122.195',
+    final channel = grpc_web.GrpcOrGrpcWebClientChannel.grpc(
+      '35.232.180.51',
       port: 443,
       options: ChannelOptions(
         credentials: ChannelCredentials.secure(
@@ -31,13 +31,13 @@ Future<void> main(List<String> args) async {
           onBadCertificate: (cert, host) => true,
         ),
       ),
-    );*/
-    final channel = ClientChannel(
+    );
+    /*final channel = ClientChannel(
         'localhost',
         port: 8080,
         options: const ChannelOptions(
             credentials: ChannelCredentials.insecure())
-    );
+    );*/
     print("Channel created!");
     final stub = MathClient(channel);
     print("Stub created!");

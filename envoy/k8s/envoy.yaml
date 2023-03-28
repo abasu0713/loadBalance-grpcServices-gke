@@ -47,9 +47,13 @@ static_resources:
               - ["*"]
               routes:
               - match:
-                  prefix: "/"
+                  prefix: "/arkobasu.space.grpc.Echo/"
                 route:
                   cluster: echo-grpc
+              - match:
+                  prefix: "/arkobasu.space.grpc.Math/"
+                route:
+                  cluster: math-grpc
                 #cors:
                 #  allow_origin_string_match:
                 #  - prefix: "*"
@@ -102,4 +106,19 @@ static_resources:
             address:
               socket_address:
                 address: echo-grpc.default.svc.cluster.local
-                port_value: 8080
+                port_value: 8081
+  - name: math-grpc
+    connect_timeout: 0.5s
+    type: STRICT_DNS
+    dns_lookup_family: V4_ONLY
+    lb_policy: ROUND_ROBIN
+    http2_protocol_options: { }
+    load_assignment:
+      cluster_name: math-grpc
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: math-grpc.default.svc.cluster.local
+                port_value: 8082
