@@ -8,7 +8,7 @@ RUN dart pub get
 
 # Copy app source code and AOT compile it.
 COPY lib/src* ./lib/src/
-COPY lib/math-grpc ./lib/echo-grpc
+COPY lib/math-grpc ./lib/math-grpc
 # Ensure packages are still up-to-date if anything has changed
 RUN dart pub get --offline
 RUN mkdir -p bin
