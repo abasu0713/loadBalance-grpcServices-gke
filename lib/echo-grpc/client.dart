@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_or_grpcweb.dart' as grpc_web;
-import 'package:grpc_test_ground/src/generated/sample-grpc.pbgrpc.dart';
+import 'package:grpc_test_ground/src/generated/echo-grpc.pbgrpc.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -17,7 +17,7 @@ Future<void> main(List<String> args) async {
   SecurityContext.defaultContext.setTrustedCertificatesBytes(trustedRootStr.buffer.asUint8List());
   HttpOverrides.global = MyHttpOverrides();
 
-  final arg = args.isNotEmpty ? "Hello ${args[0]}" : 'Hello un-named user';
+  final arg = args.isNotEmpty ? args.join(" ") : 'Hello World';
   print("Arg: $arg");
 
   try {
